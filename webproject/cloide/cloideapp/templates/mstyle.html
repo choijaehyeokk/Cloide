@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block content %}
+<title>Style</title>
+<head> Select the style you want!</head>
+<br>
+<body>
+    <ol>
+        <div >
+            <button id = "All">All</button>
+            <button id = "Suit">정장</button>
+            <button id = "Sport">스포츠</button>
+            <br>
+            <br>
+            <button id = "Casual">캐주얼</button>
+            <button id = "Vintage">빈티지</button>
+            <button id = "Street">스트릿</button>
+        </div>
+    </ol>
+
+    <br>
+    
+    <script>
+        //남자를 선택함을 전달
+        let temp = location.href.split("?");
+        //man 을 추출
+        let sex = temp[1];
+        alert(sex+'를 선택하셨습니다.');//확인창
+        let all = document.getElementById("All");
+        let suit = document.getElementById("Suit");
+        let sport = document.getElementById("Sport");
+        let casual = document.getElementById("Casual");
+        let vintage = document.getElementById("Vintage");
+        let street = document.getElementById("Street");
+        let style;
+
+        if(all){
+            all.addEventListener('click',function(event){
+                style = "All";
+                location.replace('mage?'+sex+"?"+style);
+            });
+        }
+        if(suit){
+            suit.addEventListener('click',function(event){
+                style = "Suit";
+                location.replace('mage?'+sex+"?"+style);
+            });
+        }
+        if(sport){
+            sport.addEventListener('click',function(event){
+                style = "Sport";
+                location.replace('mage?'+sex+"?"+style);
+            });
+        }
+        if(casual){
+            casual.addEventListener('click',function(event){
+                style = "Casual";
+                location.replace('mage?'+sex+"?"+style);
+            });
+        }
+        if(vintage){
+            vintage.addEventListener('click',function(event){
+                style = "Vintage";
+                location.replace('mage?'+sex+"?"+style);
+            });
+        }
+        if(street){
+            street.addEventListener('click',function(event){
+                style = "Street";
+                location.replace('mage?'+sex+"?"+style);
+            });
+        }
+
+        
+    </script>
+</body>
+{% endblock %}
