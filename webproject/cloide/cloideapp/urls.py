@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from . import views
+
 urlpatterns = [
     #path('',views.mstyle, name='mstyle'),
     path('mstyle/', views.mstyle, name = 'mstyle'),
     path('mstyle/mage/', views.mage, name ='mage'),
     path('mstyle/mage/mten', views.mten, name ='mten'),
+
 ]

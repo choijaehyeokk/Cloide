@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cloideapp.apps.CloideappConfig',
+    'accounts.apps.AccountsConfig',
 ]
 
 MIDDLEWARE = [

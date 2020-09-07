@@ -16,12 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 import cloideapp.views
+import accounts.views
 from django.conf import settings
 from django.conf.urls.static import static
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',cloideapp.views.home, name= 'home'),
     #path('cloideapp/mstyle',cloideapp.views.mstyle, name='mstyle'),
     path('',include('cloideapp.urls')),
+    path('', include('accounts.urls')),
 ]
