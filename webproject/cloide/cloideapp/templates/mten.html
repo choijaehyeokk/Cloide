@@ -1,17 +1,26 @@
 {% extends 'base.html' %}
 {% block content %}
 <body>
+    
+    <h3 id = "mychoice"></h3>
     <ol>
         <button> 아디다스 </button>
-        <button> 나이키 </button>
+        <button> 나이키 </button>    
         <button> 빈폴 </button>
         <br>
     </ol>
     <div>
-        <script>
-            
-        </script>
+        
     </div>
+    <script>
+        let temp = location.href.split("?");
+        let sex = temp[1]; //성별
+        let style = temp[2];//스타일 선택
+        let age = temp[3]; //연령대
+    
+        document.getElementById("mychoice").innerHTML = sex +" "+ style +" "+age+"대";
+        
+    </script>
     
 </body>
 

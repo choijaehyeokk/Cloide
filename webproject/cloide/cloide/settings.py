@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -24,6 +25,10 @@ SECRET_KEY = '=!-$f_yeturq#%pa04sfps=%t-)0$bc32kypkr+2f^)#5f&jl6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
+#이미지 업로드를 위한 처리
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,"media")
 
 ALLOWED_HOSTS = []
 
@@ -38,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cloideapp.apps.CloideappConfig',
+    'imagekit',
 ]
 
 MIDDLEWARE = [

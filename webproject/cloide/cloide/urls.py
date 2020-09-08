@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',cloideapp.views.home, name= 'home'),
+    path('',cloideapp.views.firstpage, name= 'firstpage'),
     #path('cloideapp/mstyle',cloideapp.views.mstyle, name='mstyle'),
     path('',include('cloideapp.urls')),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
