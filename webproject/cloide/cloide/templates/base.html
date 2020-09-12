@@ -1,7 +1,13 @@
 <html>
        
     <Head>
-        <h1>Cloide</h1>
+        <button id = "logo" type = "button"><img src="/media/image/cloidelogo.png" height ="160" width = "180" alt=""></button>
+        <style>
+            #logo{
+                background-color: white;
+                border:none;
+            }
+        </style>
     </Head>
         <body>
             
@@ -13,14 +19,22 @@
 
             </div>
             <br>
-            <button id = 'back'>뒤로가기</button>
+            <button id = 'back'></button>
             <script>
                 let back = document.getElementById("back");
-                if(back){
+                console.log(location.pathname);
+                if(location.pathname == '/'){
+                    document.getElementById("back").innerHTML='Go Skip';
                     back.addEventListener('click',function(event){
-                        history.back();
+                        location.href = "";//메인페이지로 갈 버튼
                     });
                     
+                }
+                else{
+                    document.getElementById("back").innerHTML='뒤로가기';
+                    back.addEventListener('click',function(event){
+                        history.go(-1);
+                    });
                 }
             </script>
         </body>

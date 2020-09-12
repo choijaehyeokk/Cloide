@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block content %}
+<title>Style</title>
+<head> Select the style you want!</head>
+<br>
+<body>
+    <ol>
+        <div >
+            <button id = "All">All</button>
+            <button id = "Suit">정장</button>
+            <button id = "Sport">스포츠</button>
+            <br>
+            <br>
+            <button id = "Casual">캐주얼</button>
+            <button id = "Faminine">페미닌</button>
+            <button id = "Street">스트릿</button>
+        </div>
+    </ol>
+
+    <br>
+    
+    <script>
+        //남자를 선택함을 전달
+        let temp = location.href.split("?");
+        //man 을 추출
+        let sex = temp[1];
+        let all = document.getElementById("All");
+        let suit = document.getElementById("Suit");
+        let sport = document.getElementById("Sport");
+        let casual = document.getElementById("Casual");
+        let faminine = document.getElementById("Faminine");
+        let street = document.getElementById("Street");
+        let style;
+
+        
+        all.addEventListener('click',function(event){
+            style = "All";
+            location.href = 'http://127.0.0.1:8000/wstyle/wage?'+sex+"?"+style;
+        });
+        
+        
+        suit.addEventListener('click',function(event){
+            style = "Suit";
+            location.href = 'http://127.0.0.1:8000/wstyle/wage?'+sex+"?"+style;
+        });
+        
+       
+        sport.addEventListener('click',function(event){
+            style = "Sport";
+            location.href = 'http://127.0.0.1:8000/wstyle/wage?'+sex+"?"+style;
+        });
+        
+        
+        casual.addEventListener('click',function(event){
+            style = "Casual";
+            location.href = 'http://127.0.0.1:8000/wstyle/wage?'+sex+"?"+style;
+        });
+        
+        
+        faminine.addEventListener('click',function(event){
+            style = "Faminine";
+            location.href = 'http://127.0.0.1:8000/wstyle/wage?'+sex+"?"+style;
+        });
+        
+        
+        street.addEventListener('click',function(event){
+            style = "Street";
+            location.href = 'http://127.0.0.1:8000/wstyle/wage?'+sex+"?"+style;
+        });
+        
+        
+
+        
+    </script>
+</body>
+{% endblock %}

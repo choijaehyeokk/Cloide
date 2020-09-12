@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+<title>연령대</title>
+<br>
+<body>
+
+    <div>
+        <button id = "10대">10대</button>
+        <button id = "20대">20대</button>
+        <button id = "30대">30대</button>
+        <button id = "40대">40대</button>
+    </div>
+    <script>
+        let temp = location.href.split("?");
+        let sex = temp[1]; //성별
+        let style = temp[2];//스타일 선택
+        console.log(style);
+        let ten = document.getElementById('10대');
+        let twenty = document.getElementById('20대');
+        let thirty = document.getElementById('30대');
+        let fourty = document.getElementById('40대');
+        let age;
+        
+            
+            ten.addEventListener('click',function(event){
+                age = "10";
+                location.href = 'http://127.0.0.1:8000/wstyle/wage/wten?'+sex+"?"+style+"?"+age;
+            });
+       
+            
+            twenty.addEventListener('click',function(event){
+                age = "20";
+                location.href = 'http://127.0.0.1:8000/wstyle/wage/wtwenty?'+sex+"?"+style+"?"+age;
+            });
+        
+        
+            
+            thirty.addEventListener('click',function(event){
+                age = "30";
+                location.href = 'http://127.0.0.1:8000/wstyle/wage/wthirty?'+sex+"?"+style+"?"+age;
+            });
+        
+            
+            fourty.addEventListener('click',function(event){
+                age = "40";
+                location.href = 'http://127.0.0.1:8000/wstyle/wage/wfourty?'+sex+"?"+style+"?"+age;
+            });
+        
+    </script>
+</body>
+{% endblock %}

@@ -24,4 +24,7 @@ urlpatterns = [
     #path('cloideapp/mstyle',cloideapp.views.mstyle, name='mstyle'),
     path('',include('cloideapp.urls')),
     path('home/',include('home.urls')),
-]
+
+    path('',cloideapp.views.firstpage, name= 'firstpage'),
+    #path('cloideapp/mstyle',cloideapp.views.mstyle, name='mstyle'),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

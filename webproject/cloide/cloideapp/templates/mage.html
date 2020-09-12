@@ -20,30 +20,34 @@
         let thirty = document.getElementById('30대');
         let fourty = document.getElementById('40대');
         let age;
-        if(ten){
-            age = "10대"
+        
+            
             ten.addEventListener('click',function(event){
-                location.replace("mten?"+sex+"?"+style+"?"+"age");
+                age = "10";
+                location.href = 'http://127.0.0.1:8000/mstyle/mage/mten?'+sex+"?"+style+"?"+age;
             });
-        }
-        if(twenty){
-            age = "20대"
+        
+        
+            ;
             twenty.addEventListener('click',function(event){
-                location.replace("mtwenty?"+sex+"?"+style+"?"+"age");
+                age = "20"
+                location.href = 'http://127.0.0.1:8000/mstyle/mage/mtwenty?'+sex+"?"+style+"?"+age;
             });
-        }
-        if(thirty){
-            age = "30대"
+        
+        
+            
             thirty.addEventListener('click',function(event){
-                location.replace("mthirty?"+sex+"?"+style+"?"+"age");
+                age = "30";
+                location.href = 'http://127.0.0.1:8000/mstyle/mage/mthirty?'+sex+"?"+style+"?"+age;
             });
-        }
-        if(fourty){
-            age = "40대"
+        
+        
+            
             fourty.addEventListener('click',function(event){
-                location.replace("mfourty?"+sex+"?"+style+"?"+"age");
+                age = "40";
+                location.href = 'http://127.0.0.1:8000/mstyle/mage/mfourty?'+sex+"?"+style+"?"+age;
             });
-        }
+        
     </script>
 </body>
 {% endblock %}
