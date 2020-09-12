@@ -18,11 +18,19 @@ from django.urls import path, include
 import cloideapp.views
 from django.conf import settings
 from django.conf.urls.static import static
+import notice.views
+import accounts.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     #path('cloideapp/mstyle',cloideapp.views.mstyle, name='mstyle'),
     path('',include('cloideapp.urls')),
+
+    path('', include('accounts.urls')),
+
+    path('',notice.views.notice, name = "notice"),
+    path('notice/', include('notice.urls')),
+
     path('home/',include('home.urls')),
 
     path('',cloideapp.views.firstpage, name= 'firstpage'),
