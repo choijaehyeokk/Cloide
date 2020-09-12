@@ -13,13 +13,30 @@
             
             <div class = "container">
                 
-                
                 {% block content %}
                 {% endblock %}
+            </div>
+
+            <div>
+                {% if user.is_authenticated %}
+                <a>{{user.username}}님 반갑습니다</a> 
+                <a href="javascript:{document.getElementById('logout').submit()}">Log out</a> 
+                <form id= 'logout' method = "POST" action ="{% url 'logout' %}">
+                    {% csrf_token %} <input type="hidden">
+                </form>
+                {% else %}
+                <a href="{% url 'signup' %}"><button>Sign up</button></a>
+                <a href="{% url 'login' %}"><button>Log in</button></a>
+                
+                {% endif %}
 
             </div>
             <br>
             <button id = 'back'></button>
+
+            <a href="{% url 'notice' %}"><button>공지사항</button>
+            </a>
+
             <script>
                 let back = document.getElementById("back");
                 console.log(location.pathname);

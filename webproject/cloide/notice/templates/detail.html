@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        <h1>{{notice.title}}</h1>
+        <p>{{notice.pub_date}}</p>
+        <p>{{notice.summary}} 
+        <a href = "{% url 'notice' %}"> 돌아가기 </a> 
+
+{% endblock %}
