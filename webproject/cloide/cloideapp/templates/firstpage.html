@@ -6,23 +6,22 @@
         <div class = "container">
             <button id = 'man' >Man</button>
             
-            <button id = 'woman' >Woman</button>
+            <button id = 'woman'>Woman</button>
             <script>
                 let man = document.getElementById('man');
                 let woman = document.getElementById('woman');
-                
-                man.addEventListener('click',function(event){
+                if(man){
+                    man.addEventListener('click',function(event){
                         
-                    location.href = 'mstyle?'+'Man';//성별은 남자를 선택
+                        location.href = 'mstyle?'+'Man';//성별은 남자를 선택
                         
-                });
-                
-
-                
-                woman.addEventListener('click',function(event){
-                    location.href = 'wstyle?'+'Woman';
-                });
-                
+                    });
+                }
+                else if(woman){
+                    woman.addEventListener('click',function(event){
+                        location.href = 'cloideapp/wmstyle?'+'Woman';
+                    });
+                }
                 
             </script>
         </div>
