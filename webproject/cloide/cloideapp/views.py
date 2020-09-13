@@ -38,5 +38,5 @@ def wthirty(request):
 def wfourty(request):
     return render(request, 'wfourty.html')
 
-
-
+def mypage(request):
+    return render(request, 'mypage.html')

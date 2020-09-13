@@ -5,5 +5,6 @@ from . import views
 
 urlpatterns = [
     path('',views.home,name='home'),
+    path('mypage/',views.mypage,name='mypage'),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

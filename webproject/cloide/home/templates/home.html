@@ -36,7 +36,9 @@
                 </nav>
                 <h2>Account</h2>
                 <nav class="spot">
-                    <ul>
+                    <ul>              
+                        <button><a href="{% url 'mypage' %}">마이페이지</a></button>
+               
                         <li><a href=""><!--Intro<i class="fas fa-user-tie icon-cog blackiconcolor"></i>-->Intro</a></li>
                         <li><a href=""><!--Signin<i class="fas fa-sign-in-alt icon-cog blackiconcolor"></i>-->Signin</a></li>
                         <li><a href=""><!--Signup<i class="fas fa-user-plus icon-cog blackiconcolor">--></i>Signup</a></li>
@@ -68,6 +70,7 @@
                         </div>
                     </div>
                 {% endfor %}
+                
                 <br>
             </div>
         </div>

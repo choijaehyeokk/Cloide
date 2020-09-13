@@ -34,4 +34,5 @@ urlpatterns = [
     path('mstyle/mage/wtwenty', views.mtwenty, name ='wtwenty'),
     path('mstyle/mage/wthirty', views.mthirty, name ='wthirty'),
     path('mstyle/mage/wfourty', views.mfourty, name ='wfourty'),
+    path('mstyle/mage/wfourty', views.mfourty, name ='wfourty'),
 ]
