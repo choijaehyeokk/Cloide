@@ -6,7 +6,7 @@ class Brand(models.Model):
     bnum = models.IntegerField(primary_key=True)
     intro = models.TextField()
     url = models.TextField(max_length = 200)
-    date = models.DateTimeField()
+    date = models.DateTimeField(null=True)
     logo = models.ImageField(blank = True, upload_to = "images",null = True)
     phone = models.CharField(max_length = 50)
 
