@@ -45,11 +45,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cloideapp.apps.CloideappConfig',
-
     'accounts.apps.AccountsConfig',
-
     'home.apps.HomeConfig',
-
+    'brand.apps.BrandConfig',
     'imagekit',
 ]
 
@@ -133,7 +131,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS =[
-    os.path.join(BASE_DIR,'home','static')
+    os.path.join(BASE_DIR,'home','static','mypage')
 ]
 STATIC_ROOT =os.path.join(BASE_DIR,'static')
 

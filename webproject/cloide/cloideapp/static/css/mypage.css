@@ -1,0 +1,42 @@
+.btn_mypage {
+    display:block;
+    width: 300px;
+    height: 250px;
+    font-size:30px;
+    float:left;
+    padding:20px;
+  }
+  
+  .container{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 40px;
+    grid-row-gap: 3em;
+    width:500px;
+    margin:0 auto;
+    margin-top:200px;
+  }
+  
+  h1 {
+    display: inline-block;
+    color:blue;
+    font-size :250%;
+    margin-left:50%;
+    margin-top:150px;
+    border-bottom : solid 3px black;
+  }
+  
+  .profile {
+      width: 150px;
+      height: 150px;
+  }
+  
+  .box {
+      display: block;
+      width: 150px;
+      height: 150px; 
+      overflow: hidden;
+      align-items: center;
+      margin :0 auto;
+      margin-top: 20px;
+  }

@@ -5,3 +5,6 @@ from .models import Magazine
 def home(request):
     magazine = Magazine.objects
     return render(request,'home.html',{'magazines':magazine})
+
+def mypage(request):
+    return render(request,'mypage.html')
