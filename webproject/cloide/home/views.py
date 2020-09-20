@@ -8,3 +8,6 @@ def home(request):
 
 def mypage(request):
     return render(request,'mypage.html')
+
+def intro(request):
+    return render(request,'intro.html')

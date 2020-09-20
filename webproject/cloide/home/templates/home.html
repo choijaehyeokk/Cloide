@@ -37,11 +37,24 @@
                 <h2>Account</h2>
                 <nav class="spot">
                     <ul>              
-                        <button><a href="{% url 'mypage' %}">마이페이지</a></button>
-               
-                        <li><a href=""><!--Intro<i class="fas fa-user-tie icon-cog blackiconcolor"></i>-->Intro</a></li>
-                        <li><a href=""><!--Signin<i class="fas fa-sign-in-alt icon-cog blackiconcolor"></i>-->Signin</a></li>
-                        <li><a href=""><!--Signup<i class="fas fa-user-plus icon-cog blackiconcolor">--></i>Signup</a></li>
+                
+
+ 
+                        <li><a href="{% url 'intro' %}"><!--Intro<i class="fas fa-user-tie icon-cog blackiconcolor"></i>-->클로이드 소개</a></li>
+                        {% if user.is_authenticated %}
+                        <a>{{user.username}}님 반갑습니다</a>
+                        <button><a href="{% url 'mypage' %}">마이페이지</a></button> 
+                        <a href="javascript:{document.getElementById('logout').submit()}">Log out</a> 
+                        <form id= 'logout' method = "POST" action ="{% url 'logout' %}">
+                            {% csrf_token %} <input type="hidden">
+                        </form>
+                        {% else %}
+                        <li><a href="{% url 'signup' %}"><!--Signin<i class="fas fa-sign-in-alt icon-cog blackiconcolor"></i>-->SignUp</a></li>
+                        <li><a href="{% url 'login' %}"><!--Signup<i class="fas fa-user-plus icon-cog blackiconcolor">--></i>Login</a></li>
+                        
+                        {% endif %}
+        
+                        
                     </ul>
                 </nav>
             </header>

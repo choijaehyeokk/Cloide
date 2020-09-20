@@ -1,0 +1,54 @@
+body{
+  padding:0;
+  margin:0;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap');
+
+@font-face {
+    font-family: 'GmarketSansLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1{
+    font-size : 500%;
+    text-align:center;
+    margin-top: 150px;
+    font-family: 'GmarketSansLight bold';
+  }
+  
+  .top_container {
+    width:1800px;
+    height: 500px;
+    margin:0 auto;
+    margin-top : 300px;
+    font-size : 50px;
+    text-align:center;
+    font-family: 'Nanum Myeongjo', serif;
+  }
+  
+  .bottom_container{
+    display: block;
+    width : 1800px;
+    height: 800px;
+    margin:0 auto;
+    padding : 100px;
+    margin-top : 800px;
+    margin-bottom : 500px;
+    font-size : 30px;
+    text-align:center;
+  }
+  
+  #QR {
+    display:flex;
+    padding: 50px;
+    width : 500px;
+    margin :0 auto;
+  }
+  
+  .likelion_img{
+    padding : 100px;
+    height : 200px;
+  }

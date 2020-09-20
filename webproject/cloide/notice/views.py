@@ -24,9 +24,9 @@ def detail(request,notice_id):
 def notice(request):
     notices = Notice.objects
      
-    notice_list = Notice.objects.all()
+    notice_list = Notice.objects.all().order_by('-id')
 
-    paginator = Paginator(notice_list,10)
+    paginator = Paginator(notice_list,5)
   
     page = request.GET.get('page')
 

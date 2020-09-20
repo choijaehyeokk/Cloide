@@ -1,28 +1,80 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
 
+      .container_page {
+          display:flex;
+          position : relative;
+          width:500px;
+          height:80px;
+          margin:0 auto;
+          box-sizing: border-box;
+          justify-content: center; 
+          align-items: center;
+      }
+
+      tbody{
+        display: block;
+        width: 1200px;
+        height: 150px;
+        padding :0 auto;
+        text-align:center;
+      }
+
+      .table{
+        text-align:center;
+      }
+    </style>
+
+</head>
+
+<table class="table">
+  <thead class="first_row">
+    <tr>
+      <th scope="col">번호</th>
+      <th scope="col">제목</th>
+      <th scope="col">내용</th>
+      <th scope="col">작성시간</th>
+      <th scope="col">작성자</th>
+    </tr>
+  </thead>
+  <tbody>
     {% for notice in articles %} 
-    <div class = "container">
-        <h1>{{notice.title}}</h1>
-        <p>내용 : {{notice.summary}} <a href= "{% url 'detail' notice.id %}" >....more</a></p>
-        <p>작성시간 : {{notice.pub_date}}</p>
-    </div>
+      <tr>
+        <th scope="row">{{notice.id}}</th>
+        <td>{{notice.title}}</td>
+        <td><a href= "{% url 'detail' notice.id %}" >{{notice.summary}}</a></td>
+        <td>{{notice.pub_date}}</td>
+        <td>{{notice.author}}</td>
+      </tr>
     {% endfor %}
+  </tbody>
+</table>
 
-    <div class= "container">
-    {% if articles.has_previous %}
-      <a href ="?page=1">First</a>
-      <a href="?page={{ articles.previous_page_number }}">Previous</a>
-    {% endif %}
-    
-    <span>{{articles.number}}</span>
-    <span>of</span>
-    <span>{{articles.paginator.num_pages}}</span>
-    
-    {% if articles.has_next %}
-      <a href ="?page={{ articles.next_page_number }}">Next</a>
-      <a href="?page={{ articles.paginator.num_pages }}">Last</a>
-    {% endif %}
+  
+  <nav aria-label="Page navigation example">
+  <div class="container_page">
+    <ul class="pagination">
+      <li class="page-item"><a class="page-link" href ="?page=1">First</a>
+      {% if articles.has_previous %}
+      <li class="page-item"><a class="page-link" href="?page={{ articles.previous_page_number }}">Previous</a></li>
+      {% endif %}
+
+      <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
+      <li class="page-item"><a class="page-link" href="?page=2">2</a></li>
+      <li class="page-item"><a class="page-link" href="?page=3">3</a></li>
+      <li class="page-item"><a class="page-link" href="?page=4">4</a></li>
+      <li class="page-item"><a class="page-link" href="?page=5">5</a></li>
+      
+      {% if articles.has_next %}
+      <li class="page-item"><a class="page-link" href="?page={{ articles.next_page_number }}">Next</a></li>
+      {% endif %}
+      <li class="page-item"><a class="page-link" href ="?page={{ articles.paginator.num_pages }}">Last</a>
+    </ul>
+    </nav>
   </div>
+ 
 {% endblock %}
