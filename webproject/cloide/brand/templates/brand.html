@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{{current_url}}
+{{sex}}
+{% for as in agesex.all %}
+    {% if as.age == age and as.sex == sex %}
+    
+        {{as.brand.name}}
+    {% endif %}
+{% endfor %}
+{% endblock %}
