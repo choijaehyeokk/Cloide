@@ -10,18 +10,18 @@
             <script>
                 let man = document.getElementById('man');
                 let woman = document.getElementById('woman');
-                if(man){
-                    man.addEventListener('click',function(event){
+                
+                man.addEventListener('click',function(event){
                         
-                        location.href = 'mstyle?'+'Man';//성별은 남자를 선택
+                    location.href = 'mstyle?'+'Man';//성별은 남자를 선택
                         
+                });
+                
+                
+                woman.addEventListener('click',function(event){
+                        location.href = 'wstyle?'+'Woman';
                     });
-                }
-                else if(woman){
-                    woman.addEventListener('click',function(event){
-                        location.href = 'cloideapp/wmstyle?'+'Woman';
-                    });
-                }
+                
                 
             </script>
         </div>
