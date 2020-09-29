@@ -21,7 +21,13 @@ class Agesex(models.Model):
     def __str__(self):
         return self.brand.name
 
+class Stylekind(models.Model):
+    brand = models.ForeignKey(Brand, on_delete = models.CASCADE)
+    style = models.IntegerField()
+    kind = models.IntegerField()
 
+    def __str__(self):
+        return self.brand.name
 
 
 

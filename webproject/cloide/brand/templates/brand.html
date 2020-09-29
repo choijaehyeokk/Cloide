@@ -13,20 +13,14 @@
 </head>
 
     <div class = "column">
-        {% for as in agesex.all %}
-    
-            {% if as.age == age and as.sex == sex %}
-            
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                            {{as.brand.name}}
-                            <p class="card-text">Introduce about brand</p>
-                            <a href="#" class="card-link">Brand link</a>
-                            
-                        </div>
-                    </div>
-                
-            {% endif %}
+        {% for brand in brands %}
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    {{brand.name}}
+                    <p class="card-text">Introduce about brand</p>
+                    <a href="#" class="card-link">Brand link</a>
+                </div>
+            </div>  
         {% endfor %}
     </div>
 
