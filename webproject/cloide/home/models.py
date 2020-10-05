@@ -8,7 +8,7 @@ class Magazine(models.Model):
     style = models.IntegerField()  
     kind = models.IntegerField()
     url = models.TextField('url')
-    
+    image = models.ImageField(blank=True)
 
     def __str__(self):
         return self.title
