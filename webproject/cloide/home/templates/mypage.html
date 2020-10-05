@@ -2,7 +2,7 @@
   {% load static %}
 
   <head>
-    <link rel="stylesheet" href="{% static 'css/mypage.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/mypage2.css'%}" type="text/css">
     <h1> 마이페이지 </h1>
   </head>
 
@@ -22,8 +22,10 @@
       <img class="profile" src="https://www.flaticon.com/svg/static/icons/svg/35/35822.svg">
     </div></a></button>
     
-    <button><a class="btn_mypage" onclick="location.href=">나만의 옷장
+    <button><a class="btn_mypage" href="{% url 'mycloset' %}">나만의 옷장
       <div class="box">
       <img class="profile" src="https://www.flaticon.com/svg/static/icons/svg/963/963875.svg">
     </div></a></button>
+
+  </div>
 </html>

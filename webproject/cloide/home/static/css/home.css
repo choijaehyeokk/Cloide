@@ -221,3 +221,7 @@ footer{
 
 /*cards*/
 
+.foot {
+    text-align: center;
+    background-color: yellow;
+}

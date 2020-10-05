@@ -11,3 +11,6 @@ def mypage(request):
 
 def intro(request):
     return render(request,'intro.html')
+
+def mycloset(request):
+    return render(request,'mycloset.html')

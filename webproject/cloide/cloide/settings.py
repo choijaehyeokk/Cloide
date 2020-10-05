@@ -131,7 +131,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS =[
-    os.path.join(BASE_DIR,'home','static','mypage','notice')
+    os.path.join(BASE_DIR,'home','static','mypage2','notice')
 ]
 STATIC_ROOT =os.path.join(BASE_DIR,'static')
 
