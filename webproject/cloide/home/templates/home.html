@@ -72,20 +72,45 @@
                 <a href="#" id="prev"></a>
                 <a href="#" id="next"></a>
             </div>
+            
+            <!-- {% for magazine in magazines.all %}
             <div class="cardWrap">
-                {% for magazine in magazines.all %}
                     <div class="card" style="width: 18rem;">
-                        <img src="../static/img/card1.png" class="card-img-top" alt="...">
+                        <img src="{{magazine.image.url}}" class="card-img-top" alt="...">
                         <div class="card-body">
                         <h5 class="card-title">{{magazine.title}}</h5>
                         <p class="card-text">{{magazine.content}}</p>
-                        <a href="#" class="btn btn-primary">{{magazine.url}}</a>
+                        <a href="#" class="btn btn-primary">상세보기</a>
                         </div>
                     </div>
-                {% endfor %}
+             </div>
+            {% endfor %} -->
+            <main role="main">
+                   <div class="album py-5 bg-light">
+                    <div class="container">              
+                        <div class="row">
+                        {% for magazine in magazines.all %}
+                            <div class="col-md-4">
+                                <div class="card mb-4 shadow-sm">
+                                <img src="{{magazine.image.url}}" alt="">  
+                                <div class="card-body">
+                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    </div>
+                                    <small class="text-muted">{{magazine.url}}</small>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        </div>
+                    </div>
+                    </div>
                 
-                <br>
-            </div>
+              </main>    
+
         </div>
         <footer>
             This is Cloide
