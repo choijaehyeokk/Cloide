@@ -2,6 +2,11 @@ from django.shortcuts import render
 from .models import Brand, Agesex, Stylekind
 # Create your views here.
 
+
+def brand_detail(request):
+    brand = request.POST.get('brand_name')
+    return render(request, 'brand_detail.html',)
+
 def brand(request):
     brand = Brand.objects.all()
     agesex = Agesex.objects.all()
