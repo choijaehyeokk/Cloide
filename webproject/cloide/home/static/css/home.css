@@ -23,6 +23,7 @@ header {
     text-align: center;
     text-decoration: none;
     background: white;
+    overflow: hidden;
 }
 header h1 {
     position: absolute;
@@ -42,7 +43,7 @@ header h2{
     position: absolute;
     left: -10000px;
 }
-header .lnb li{
+header .lnb li {
     display: inline-block;
     padding-top: 30px;
     /*float: left; 는 쓰면 안됨*/
@@ -87,6 +88,8 @@ header .spot li a{
 .blackiconcolor{
     color: black;
 }
+/*여기는 menu bar*/
+
 /*header 검색창*/
 .search{
     position: absolute;
@@ -131,7 +134,7 @@ header .spot li a{
     position: relative;
     width:100%;
     overflow: hidden;
-    padding-bottom: 25px;
+    padding-bottom: 40px;
 }
 .container img{
     border-radius: 10px;
@@ -295,3 +298,4 @@ footer {
 .foot1 h2{
     color: #F8F8B3;
 }
+
