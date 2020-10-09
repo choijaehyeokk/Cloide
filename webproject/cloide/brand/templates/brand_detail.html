@@ -20,6 +20,7 @@
     <a id = "bname" href="">{{b.name}}</a>
     <br>
     <a href="">{{b.url}}</a>
+    <h5 id = "introbrand">{{b.intro}}</h5>
   </div>
 </div>
 
@@ -63,36 +64,50 @@
   let bstyle = document.getElementById('bstyle');
   
   let bceleb = document.getElementById('bceleb');
-  let bname = document.getElementById('bname');
-  let cel = 'Celebrity of '+document.getElementById('bname').value;
+
+  let brandintro = document.getElementById('introbrand').textContent;
+  let bname = document.getElementById('bname').textContent;
+  let intr = 'About '+ bname;
+
+  let cel = 'Celebrity of '+bname;
   
-  let sty = 'Styling '+document.getElementById('bname');
+  let sty = 'Styling '+ bname;
+
+  let vdo = bname+'s '+'Video'; 
   bceleb.addEventListener('click', function(event){
 
     cardtitle.innerHTML=cel;
-    cardcon.innerHTML = '{{b.intro}}';
+    
+    cardcon.innerHTML = brandintro;
   });
 
   bintro.addEventListener('click', function(event){
     
+    cardtitle.innerHTML=intr;
+    cardcon.innerHTML = brandintro;
 
   });
   
   bvideo.addEventListener('click', function(event){
-    
+    cardtitle.innerHTML=vdo;
+    cardcon.innerHTML = 'API of ' + bname;
   
   });
 
   bstyle.addEventListener('click', function(event){
 
-    
+    cardtitle.innerHTML = sty;
+    cardcon.innerHTML = "How to Style with "+ bname;
 
   });
   
 
 </script>
 <style>
-    
+    #introbrand{
+      
+      display: none;
+    }
     
     .cardbrand{
       width:200px;
@@ -101,7 +116,7 @@
     }
     .card{
         width:1000px;
-        height:400px
+        height:400px;
     }
     .navbar{
         font-family: sans-serif;
