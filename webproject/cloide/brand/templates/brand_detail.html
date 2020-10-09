@@ -4,7 +4,7 @@
 {% load static %}
 <head>
     <link rel="stylesheet" href="{% static 'css/brand.css'%}" type="text/css">
-    <script src="../static/js/scripts.js" type="text/javascript"></script>
+    
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <meta charset="UTF-8">
@@ -12,39 +12,93 @@
     <title>Cloide</title>   
 </head>
 <center>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">브랜드 소개</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand" href="#">홍보 영상</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand" href="#">스타일링</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand" href="#">클로이드 셀럽</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+{% for b in brand  %}
+<div class="brandcard" style="width: 20rem;">
+  <div class="card-body">
+    <img src="{{b.logo.url}}" class="card-img-top" >
+    <br><br>
+    <a id = "bname" href="">{{b.name}}</a>
+    <br>
+    <a href="">{{b.url}}</a>
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+<div class = "navbartool">
+  <nav class="nav nav-pills flex-column flex-sm-row">
+    <a id = "bintro" class="flex-sm-fill text-sm-center nav-link active" href="#">브랜드 소개</a>
+    <a id = "bvideo" class="flex-sm-fill text-sm-center nav-link " href="#">홍보 영상</a>
+    <a id = "bstyle" class="flex-sm-fill text-sm-center nav-link" href="#">스타일링</a>
+    <a id = "bceleb" class="flex-sm-fill text-sm-center nav-link" href="#">클로이드 셀럽</a>
   </nav>
+  
+</div>
+<br><br>
+  <div class="card" id = "intro" style="width: 60rem;">
+    <div class="card-body">
+      <h5 id = "title" class="card-title">About {{b.name}}</h5>
+      <br>
+      <h5 id = "content" class="card-subtitle mb-2 text-muted">{{b.intro}}</h5>
+      
+    </div>
+  </div>
+  
+  
+  {% endfor %}
 </center>
 <br>
 <br>
 <center>
-<div class="card" style="width: 60rem;">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
-    </div>
-  </div>
+
+  
 </center>
+<script type="text/javascript">
+  let bintro = document.getElementById('bintro');
+  let cardtitle = document.getElementById('title');
+  let cardcon = document.getElementById('content');
+  let bvideo = document.getElementById('bvideo');
+  
+  let bstyle = document.getElementById('bstyle');
+  
+  let bceleb = document.getElementById('bceleb');
+  let bname = document.getElementById('bname');
+  let cel = 'Celebrity of '+document.getElementById('bname').value;
+  
+  let sty = 'Styling '+document.getElementById('bname');
+  bceleb.addEventListener('click', function(event){
+
+    cardtitle.innerHTML=cel;
+    cardcon.innerHTML = '{{b.intro}}';
+  });
+
+  bintro.addEventListener('click', function(event){
+    
+
+  });
+  
+  bvideo.addEventListener('click', function(event){
+    
+  
+  });
+
+  bstyle.addEventListener('click', function(event){
+
+    
+
+  });
+  
+
+</script>
 <style>
+    
+    
+    .cardbrand{
+      width:200px;
+      height:200px;
+
+    }
     .card{
         width:1000px;
         height:400px
