@@ -8,5 +8,6 @@ urlpatterns = [
     path('mypage/',views.mypage,name='mypage'),
     path('intro/',views.intro,name='intro'),
     path('mycloset/',views.mycloset,name='mycloset'),
+    path('update/', views.update, name="update"),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

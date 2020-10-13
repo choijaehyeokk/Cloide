@@ -49,6 +49,12 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'brand.apps.BrandConfig',
     'imagekit',
+    'allauth',
+    'allauth.account', 
+    'allauth.socialaccount',
+    'django.contrib.sites',
+    'allauth.socialaccount.providers.naver', 
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -66,7 +72,7 @@ ROOT_URLCONF = 'cloide.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['cloide/templates'],
+        'DIRS': ['cloide/templates', os.path.join(BASE_DIR, 'templates') , os.path.join(BASE_DIR, 'templates', 'allauth')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -135,3 +141,12 @@ STATICFILES_DIRS =[
 ]
 STATIC_ROOT =os.path.join(BASE_DIR,'static')
 
+
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+SITE_ID = 1
+LOGIN_REDIRECT_URL = 'login/'
+ACCOUNT_LOGOUT_ON_GET = True # 로그아웃 버튼 클릭 시 자동 로그아웃
