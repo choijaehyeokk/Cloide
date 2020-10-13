@@ -1,6 +1,31 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Brand, Agesex, Stylekind
+from urllib import parse
+
 # Create your views here.
+
+
+def brand_detail(request):
+    #brand = Brand.objects.bnum
+    #brand.bnum = request.POST['bnum']
+    current_url = request.get_full_path()
+    temp = current_url.split('?')
+    brand = temp[1]
+    dec = parse.unquote(brand)
+
+    print("hi",dec)
+    allbrand = Brand.objects.all()
+    result = list()
+    for choice in allbrand:
+        if dec == choice.name:
+            #상세페이지 브랜드랑 db내 브랜드와 같다면
+            print("hi")
+            result.append(choice)
+    
+    print(result)#result에 해당 브랜드의 정보 담아서 상세페이지로 전달.
+   
+    #brand = request.POST.get('brand_name')
+    return render(request, 'brand_detail.html',{'brand':result})
 
 def brand(request):
     brand = Brand.objects.all()

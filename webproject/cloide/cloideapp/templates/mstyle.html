@@ -6,19 +6,25 @@
 </head>
 <br>
 <body>
-    <ol>
-        <div >
-            <button id = "All">All</button>
-            <button id = "Suit">정장</button>
-            <button id = "Sport">스포츠</button>
-            <br>
-            <br>
-            <button id = "Casual">캐주얼</button>
-            <button id = "Vintage">빈티지</button>
-            <button id = "Street">스트릿</button>
+    <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
-    </ol>
-
+    </div>
+        <div class = "container">
+            <button id = "All"><img id = "all" src = "../static/img/all.PNG"><br>ALL</button>
+            <button id = "Suit"><img id = "suit" src = "../static/img/suit.jpeg"><br>정장</button>
+            <button id = "Sport"><img id = "sport" src = "../static/img/sportsm.PNG"><br>스포츠</button>
+            <br>
+            <br>
+            <br><br>
+            <button id = "Casual"><img id = "cas" src = "../static/img/casual.jpeg"><br>캐주얼</button>
+            <button id = "Vintage"><img id = "vin" src = "../static/img/vintagem.jpeg"><br>빈티지</button>
+            <button id = "Street"><img id = "stre" src = "../static/img/streetm.jpeg"><br>스트릿</button>
+        </div>
+    
+</body>
     <br>
     
     <script>
@@ -75,39 +81,72 @@
         
     </script>
     <style>
+        
+        #cas{
+            width:300px;
+            height:250px;
+
+        }
+        #sport{
+            width:300px;
+            height:250px;
+            padding-left:80px;
+        }
+        #vin{
+            width:300px;
+            height:250px;
+        }
+        #suit{
+            width:300px;
+            height:250px;
+            padding-left: 40px;
+        }
+        #stre{
+            width:300px;
+            height:250px;
+        }
+        #all{
+            width:300px;
+            height:250px;
+           
+        }
         #All{
+            
             font-size:20px;
-            width: 100px;
-            height:50px;
+            background-color: transparent;
+            padding-right:40px;
+            border: none;
         }
         #Suit{
+            padding-left:20px;
             font-size:20px;
-            width: 100px;
-            height:50px;
+            background-color: transparent;
+            border: none;
         }
         #Sport{
+            padding-left:40px;
             font-size:20px;
-            width: 100px;
-            height:50px;
+            background-color: transparent;
+            border: none;
         }
         #Casual{
             font-size:20px;
-            width: 100px;
-            height:50px;
+            background-color: transparent;
+            border: none;
         }
         #Vintage{
             font-size:20px;
-            width: 100px;
-            height:50px;
+            background-color: transparent;
+            border: none;
         }#Street{
             font-size:20px;
-            width: 100px;
-            height:50px;
+            background-color: transparent;
+            border: none;
         }
         #title{
             text-align: center;
             font-size:20px;
         }
     </style>
-</body>
+
 {% endblock %}

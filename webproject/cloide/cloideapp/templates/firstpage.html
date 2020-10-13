@@ -2,12 +2,13 @@
 
     {% block content %}
     <br>
+    <br>
     <body>
         
         <div class = "container">
-            <button id = 'man' >Man</button>
+            <button id = 'man' ><img id = "manimg" src = "../static/img/man.jpeg"><br><br>Man</button>
             
-            <button id = 'woman'>Woman</button>
+            <button id = 'woman'><img id = "wmimg" src = "../static/img/women.jpeg"><br><br>Woman</button>
             <script>
                 let man = document.getElementById('man');
                 let woman = document.getElementById('woman');
@@ -27,16 +28,27 @@
             </script>
         </div>
         <style>
+            #manimg{
+                width:400px;
+                height:200px;
+                
+            }
+            #wmimg{
+                width:400px;
+                height:200px;
+            }
+           
             #man{
-                font-size:20px;
-                width: 100px;
-                height:50px;
+                font-size : 40px;
+                background-color: transparent;
+                border:none;
             }
             
             #woman{
-                font-size:20px;
-                width: 100px;
-                height:50px;
+                padding-left: 40px;
+                font-size : 40px;
+                background-color: transparent;
+                border:none ;
             }
         </style>
     

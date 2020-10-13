@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<head>
+    <link rel="stylesheet" href="{% static 'css/brand.css'%}" type="text/css">
+    
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloide</title>   
+</head>
+<center>
+{% for b in brand  %}
+<div class="brandcard" style="width: 20rem;">
+  <div class="card-body">
+    <img src="{{b.logo.url}}" class="card-img-top" >
+    <br><br>
+    <a id = "bname" href="">{{b.name}}</a>
+    <br>
+    <a href="">{{b.url}}</a>
+    <h5 id = "introbrand">{{b.intro}}</h5>
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+<div class = "navbartool">
+  <nav class="nav nav-pills flex-column flex-sm-row">
+    <a id = "bintro" class="flex-sm-fill text-sm-center nav-link active" href="#">브랜드 소개</a>
+    <a id = "bvideo" class="flex-sm-fill text-sm-center nav-link " href="#">홍보 영상</a>
+    <a id = "bstyle" class="flex-sm-fill text-sm-center nav-link" href="#">스타일링</a>
+    <a id = "bceleb" class="flex-sm-fill text-sm-center nav-link" href="#">클로이드 셀럽</a>
+  </nav>
+  
+</div>
+<br><br>
+  <div class="card" id = "intro" style="width: 60rem;">
+    <div class="card-body">
+      <h5 id = "title" class="card-title">About {{b.name}}</h5>
+      <br>
+      <h5 id = "content" class="card-subtitle mb-2 text-muted">{{b.intro}}</h5>
+      
+    </div>
+  </div>
+  
+  
+  {% endfor %}
+</center>
+<br>
+<br>
+<center>
+
+  
+</center>
+<script type="text/javascript">
+  let bintro = document.getElementById('bintro');
+  let cardtitle = document.getElementById('title');
+  let cardcon = document.getElementById('content');
+  let bvideo = document.getElementById('bvideo');
+  
+  let bstyle = document.getElementById('bstyle');
+  
+  let bceleb = document.getElementById('bceleb');
+
+  let brandintro = document.getElementById('introbrand').textContent;
+  let bname = document.getElementById('bname').textContent;
+  let intr = 'About '+ bname;
+
+  let cel = 'Celebrity of '+bname;
+  
+  let sty = 'Styling '+ bname;
+
+  let vdo = bname+'s '+'Video'; 
+  bceleb.addEventListener('click', function(event){
+
+    cardtitle.innerHTML=cel;
+    
+    cardcon.innerHTML = brandintro;
+  });
+
+  bintro.addEventListener('click', function(event){
+    
+    cardtitle.innerHTML=intr;
+    cardcon.innerHTML = brandintro;
+
+  });
+  
+  bvideo.addEventListener('click', function(event){
+    cardtitle.innerHTML=vdo;
+    cardcon.innerHTML = 'API of ' + bname;
+  
+  });
+
+  bstyle.addEventListener('click', function(event){
+
+    cardtitle.innerHTML = sty;
+    cardcon.innerHTML = "How to Style with "+ bname;
+
+  });
+  
+
+</script>
+<style>
+    #introbrand{
+      
+      display: none;
+    }
+    
+    .cardbrand{
+      width:200px;
+      height:200px;
+
+    }
+    .card{
+        width:1000px;
+        height:400px;
+    }
+    .navbar{
+        font-family: sans-serif;
+        padding-left:180px;
+        font-weight: bold;
+    }
+    .navbar-brand{
+        text-align:center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-right:20px;
+        padding-left:40px;
+    }
+    .navbar-expand-lg{
+        text-align:center;
+        
+    }
+    .navbar-light{
+        text-align: center;
+        
+    }
+    .bg-light{
+        text-align: center;
+    
+    }
+</style>
+{% endblock %}
