@@ -8,7 +8,11 @@
 }
 
 h1{
+<<<<<<< HEAD
     font-size : 100%;
+=======
+    font-size : 120%;
+>>>>>>> 341f3e801867927a7d6d00349c038869f4648aa5
     text-align:center;
     margin-top: 150px;
     font-family: 'GmarketSansLight bold';
@@ -19,8 +23,12 @@ h1{
     height: 500px;
     margin:0 auto;
     margin-top : 300px;
+<<<<<<< HEAD
     font-size : 30px;
     text-align:center;
+=======
+    font-size : 40px;
+>>>>>>> 341f3e801867927a7d6d00349c038869f4648aa5
     font-family: 'Nanum Myeongjo', serif;
   }
   
