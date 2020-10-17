@@ -29,7 +29,7 @@ urlpatterns = [
     path('',notice.views.notice, name = "notice"),
     path('notice/', include('notice.urls')),
     path('brand/',include('brand.urls')),
-    path('home/',include('home.urls')),
+    path('home/',include('home.urls'),name = 'home'),
     path('',cloideapp.views.firstpage, name= 'firstpage'),
     #path('cloideapp/mstyle',cloideapp.views.mstyle, name='mstyle'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

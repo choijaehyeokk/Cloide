@@ -1,51 +1,142 @@
-<html>
-    <center> 
-    <Head>
-        <button id = "logo" type = "button"><img src="/media/image/cloide_logo.png" height ="300" width = "400" alt=""></button>
-        <style>
-            #logo{
-                background-color: white;
-                border:none;
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <script src="../static/js/scripts.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="../static/css/home.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.1.1">
+    <title>클로이드</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/album/">
+
+    <!-- Bootstrap core CSS -->
+  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+          }
+          @font-face {
+            font-family: 'GmarketSansLight';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        body {
+            font-family:GmarketSansLight;
+        }
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+            font-size: 3.5rem;
             }
-        </style>
-    </Head>
-        <body>
+        }
+        a{
+          text-decoration: none;
+          color: #000;
+        }
+    </style>
+
+  </head>
+  <body>
+      <header>
+        <div class="collapse bg-white text-black" id="navbarHeader">
+          <div class="container bg-white text-black">
+            <div class="row">
+              <div class="col-sm-4 offset-md-1 py-4">
+                <h4 class="text-black">Age</h4>
+                <ul class="list-unstyled">
+                  <li><a href="#" class="text-black">10대</a></li>
+                  <li><a href="#" class="text-black">20대</a></li>
+                  <li><a href="#" class="text-black">30대</a></li>
+                  <li><a href="#" class="text-black">40대</a></li>
+                </ul>
+              </div>
+              <div class="col-sm-4 offset-md-1 py-4">
+                <h4 class="text-black">Style</h4>
+                <ul class="list-unstyled">
+                  <li><a href="#" class="text-black">Casual</a></li>
+                  <li><a href="#" class="text-black">Street</a></li>
+                  <li><a href="#" class="text-black">Modern</a></li>
+                  <li><a href="#" class="text-black">Nomal</a></li>
+                  <li><a href="#" class="text-black">Minimal</a></li>
+                  <li><a href="#" class="text-black">Classic</a></li>
+                  <li><a href="#" class="text-black">Sport</a></li>
+                  <li><a href="#" class="text-black">Natural</a></li>
+                  <li><a href="#" class="text-black">Glam</a></li>
+                  <li><a href="#" class="text-black">Chic</a></li>
+                  <li><a href="#" class="text-black">Formal</a></li>
+                  <li><a href="#" class="text-black">Feminine</a></li>
+                  <li><a href="#" class="text-black">Vintage</a></li>
+                  <li><a href="#" class="text-black">Amekaji</a></li>
+                  <li><a href="#" class="text-black">Dandy</a></li>
+                </ul>
+              </div>
+              <div class="col-sm-4 offset-md-1 py-4">
+                <h4 class="text-black">계정&소개</h4>
+                <ul class="list-unstyled">
+                  <li><a href="{% url 'intro' %}" class="text-black">클로이드소개</a></li>
+                  {% if user.is_authenticated %}
+                  <a style="background-color: coral; color: black;"><strong>{{user.username}}</strong>님 반갑습니다</a>
+                  <button><a href="{% url 'mypage' %}">마이페이지</a></button>
+                  <li><a href="javascript:{document.getElementById('logout').submit()}" class="text-black">로그아웃</a></li>
+                  <form id= 'logout' method = "POST" action ="{% url 'logout' %}">
+                    {% csrf_token %} <input type="hidden">
+                </form>
+                  {% else %}
+                    <li><a href="{% url 'signup' %}" class="text-black">회원가입</a></li>
+                    <li><a href="{% url 'login' %}" class="text-black">로그인</a></li>
+                  {% endif %}
+                </ul>
+              </div>
             
-            <div class = "container">
-                
-                {% block content %}
-                {% endblock %}
             </div>
-
-            <br>
-            <button id = 'back'></button>
-
+          </div>
+        </div>
+        <div class="navbar navbar-dark bg-white shadow-sm">
+          <div class="container d-flex justify-content-between">
+            <a href="{% url 'home' %}" class="navbar-brand d-flex align-items-center text-black" style="color: black;">
+              <img src="../../home/static/img/logo.png" alt="" class='rounded'>
+              <strong>Cloide</strong>
             </a>
-
-            <script>
-                let back = document.getElementById("back");
-                console.log(location.pathname);
-                if(location.pathname == '/'){
-                    document.getElementById("back").innerHTML='Go Skip';
-                    back.addEventListener('click',function(event){
-                        location.href = "http://127.0.0.1:8000/home/";//메인페이지로 갈 버튼
-                    });
-                    
-                }
-                else{
-                    document.getElementById("back").innerHTML='뒤로가기';
-                    back.addEventListener('click',function(event){
-                        history.go(-1);
-                    });
-                }
-            </script>
-            <style>
-                #back{
-                    font-size:15px;
-                    width:80px;
-                    height:40px;
-                }
-            </style>
-        </body>
-    </center> 
+            <nav class="navbar navbar-light" style="background-color:white;">
+              <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="브랜드검색" aria-label="Search">
+                <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">검색</button>
+              </form>
+            </nav>
+            <button class="navbar-toggler bg-dark " type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            
+          </div>
+        </div>
+  </header>
+  {% block content %}
+  {% endblock %} 
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">위로올라가기</a>
+      </p>
+      <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
+      <p>New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a href="../getting-started/introduction/">getting started guide</a>.</p>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 </html>

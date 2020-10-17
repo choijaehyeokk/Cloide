@@ -1,8 +1,3 @@
-body{
-  padding:0;
-  margin:0;
-}
-
 @import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap');
 
 @font-face {
@@ -13,26 +8,26 @@ body{
 }
 
 h1{
-    font-size : 500%;
+    font-size : 100%;
     text-align:center;
     margin-top: 150px;
     font-family: 'GmarketSansLight bold';
   }
   
   .top_container {
-    width:1800px;
+    width:1000px;
     height: 500px;
     margin:0 auto;
     margin-top : 300px;
-    font-size : 50px;
+    font-size : 30px;
     text-align:center;
     font-family: 'Nanum Myeongjo', serif;
   }
   
   .bottom_container{
     display: block;
-    width : 1800px;
-    height: 800px;
+    width : 1000px;
+    height: 500px;
     margin:0 auto;
     padding : 100px;
     margin-top : 800px;
