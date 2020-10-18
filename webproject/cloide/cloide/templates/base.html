@@ -114,11 +114,12 @@
               <strong>Cloide</strong>
             </a>
             <nav class="navbar navbar-light" style="background-color:white;">
-              <form class="form-inline">
-                <input class="form-control mr-sm-2" type="search" placeholder="브랜드검색" aria-label="Search">
+              <form class="form-inline" action="{% url 'search'%}" method="GET">
+                <input class="form-control mr-sm-2 " type="search" placeholder="브랜드검색" aria-label="Search" name="query">
                 <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">검색</button>
               </form>
             </nav>
+            
             <button class="navbar-toggler bg-dark " type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>

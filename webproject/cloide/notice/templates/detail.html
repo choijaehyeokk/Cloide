@@ -1,9 +1,24 @@
 {% extends 'base.html' %}
-
 {% block content %}
-        <h1>{{notice.title}}</h1>
-        <p>{{notice.pub_date}}</p>
-        <p>{{notice.summary}} 
-        <a href = "{% url 'notice' %}"> 돌아가기 </a> 
+<style>
+        .notice_detail{
+                position: relative;
+                text-align: center;
+                margin-left: 0px;
+                margin-top: 100px;
+                height: 800px;
+        }
+        .notice_detail a{
+                color: black;
+        }
+</style>
 
+<div class="notice_detail">
+        
+                <h1>{{notice.title}}</h1>
+                <p>{{notice.pub_date}}</p>
+                <p>{{notice.summary}} <br><br>
+                <a href = "{% url 'notice' %}"> 돌아가기 </a> 
+
+</div>
 {% endblock %}

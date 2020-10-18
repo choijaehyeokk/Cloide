@@ -1,31 +1,61 @@
-<html lang="ko">
-  {% load static %}
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
 
-  <head>
-    <link rel="stylesheet" href="{% static 'css/mypage2.css'%}" type="text/css">
-    <h1> 마이페이지 </h1>
-  </head>
+<style>
+  .mypage_set{
+    margin-left: 200px;
+    margin-top: 30px;
+    margin-bottom: 200px;
+  }
+  h5{
+    font-size: 30px;
+    text-align: center;
+  }
+  .mypage_set a{
+    text-decoration: none;
+  }
 
-  <div class="container">
-    <button><a class="btn_mypage" onclick="location.href=">내 정보
-      <div class="box">
-      <img class="profile" src="https://www.flaticon.com/svg/static/icons/svg/1077/1077063.svg">
-    </div></a></button>
-    
-    <button><a class="btn_mypage" onclick="location.href=">최근 복 목록
-      <div class="box">
-      <img class="profile" src="https://www.flaticon.com/svg/static/icons/svg/3159/3159614.svg">
-    </div></a></button>
+</style>
 
-    <button><a class="btn_mypage" href="{% url 'notice' %}">공지사항
-      <div class="box">
-      <img class="profile" src="https://www.flaticon.com/svg/static/icons/svg/35/35822.svg">
-    </div></a></button>
-    
-    <button><a class="btn_mypage" href="{% url 'mycloset' %}">나만의 옷장
-      <div class="box">
-      <img class="profile" src="https://www.flaticon.com/svg/static/icons/svg/963/963875.svg">
-    </div></a></button>
+<div class="mypage_set">
+  <div class="card-deck">
 
+      <div class="card bg-danger" style="max-width: 13rem;">
+        <img class="profile" src="https://www.flaticon.com/svg/static/icons/svg/1077/1077063.svg">
+        <div class="card-body">
+          <h5 class="card-title">내 정보</h5>
+          <p class="card-text">여기서 나의 정보를 확인하세요</p>
+        </div>
+      </div>
+
+
+      <div class="card  bg-success" style="max-width: 13rem;">
+        <img class="profile" src="https://www.flaticon.com/svg/static/icons/svg/3159/3159614.svg" style="max-width: 13rem;">
+        <div class="card-body">
+          <h5 class="card-title">최근 본 목록</h5>
+          <p class="card-text">당신이 본 브랜드의 목록입니다</p>
+        </div>
+      </div>
+
+      <a href="{% url 'notice' %}">
+      <div class="card bg-info" style="max-width: 13rem;">
+        <img class="profile" src="https://www.flaticon.com/svg/static/icons/svg/35/35822.svg" style="max-width: 13rem;">
+        <div class="card-body">
+          <h5 class="card-title">공지사항</h5>
+          <p class="card-text">오늘의 클로이드 공지를 확인해 보세요</p>
+        </div>
+      </div>
+    </a>
+    <a href="{% url 'mycloset' %}">
+      <div class="card bg-warning" style="max-width: 13rem;">
+        <img class="profile  text-white" src="https://www.flaticon.com/svg/static/icons/svg/963/963875.svg">
+        <div class="card-body">
+          <h5 class="card-title">나만의 옷장</h5>
+          <p class="card-text">당신이 좋아하는 브랜드와 상품 옷장입니다</p>
+        </div>
+      </div>
+    </a>
+    </div>
   </div>
-</html>
+{% endblock %}

@@ -1,17 +1,6 @@
 {% extends 'base.html' %}
-
-{% block content %}
 {% load static %}
-<head>
-    <link rel="stylesheet" href="{% static 'css/brand.css'%}" type="text/css">
-    <script src="../static/js/scripts.js" type="text/javascript"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cloide</title>   
-</head>
-
+{% block content %}
 <main role="main">
     <div class="album py-5 bg-light">
      <div class="container">              
@@ -35,6 +24,8 @@
                  </div>
                  </div>
              </div>
+         {% empty %}
+             <center><h5>검색 결과가 없습니다.</h5></center>
          {% endfor %}
          </div>
      </div>

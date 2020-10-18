@@ -20,7 +20,7 @@ def search(request):
     query = request.GET['query']
     if query:
         brands = Brand.objects.filter(name__contains=query)
-    return render(request,'search.html',{'brands':brands})
+    return render(request,'brand.html',{'brands':brands})
 
 def magazine_detail(request,magazine_id):
     magazine_detail = get_object_or_404(Magazine,pk=magazine_id)

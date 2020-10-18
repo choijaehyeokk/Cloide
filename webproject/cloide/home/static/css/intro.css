@@ -8,39 +8,32 @@
 }
 
 h1{
-<<<<<<< HEAD
-    font-size : 100%;
-=======
-    font-size : 120%;
->>>>>>> 341f3e801867927a7d6d00349c038869f4648aa5
+    font-size : 100px;
     text-align:center;
     margin-top: 150px;
-    font-family: 'GmarketSansLight bold';
+    font-family: 'GmarketSansLight';
   }
   
   .top_container {
     width:1000px;
-    height: 500px;
+    height: 300px;
     margin:0 auto;
     margin-top : 300px;
-<<<<<<< HEAD
-    font-size : 30px;
     text-align:center;
-=======
-    font-size : 40px;
->>>>>>> 341f3e801867927a7d6d00349c038869f4648aa5
-    font-family: 'Nanum Myeongjo', serif;
+    font-size : 30px;
+
+    font-family: 'GmarketSansLight';
   }
   
   .bottom_container{
     display: block;
     width : 1000px;
-    height: 500px;
+    height: 400px;
     margin:0 auto;
     padding : 100px;
     margin-top : 800px;
     margin-bottom : 500px;
-    font-size : 30px;
+    font-size : 20px;
     text-align:center;
   }
   

@@ -1,25 +1,19 @@
-<head>
-  <h1>나만의 옷장</h1>
-</head>
+{% extends 'base.html' %}
 
-<body>
+{% block content %}
+<style>
+  .closet {
+    margin-left: 300px;
+    margin-top: 50px;
+    margin-bottom: 400px;
+  }
+
+</style>
+
+
   <div class="closet">
     <img src="https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AAJxbnu.img?h=552&w=750&m=6&q=60&u=t&o=f&l=f" alt="" onclick="location.href=''">
   </div>
 
-  <style>
-    img{
-  display: block;
-  width: 1000px;
-  height: 1000px;
-  margin:0 auto;
-  padding:100px;
-    }
-
-    h1 {
-    text-align: center;
-    margin-top: 200px;
-    font-size: 80px;
-    }
-  </style> 
-</body>
+  
+{% endblock %}
