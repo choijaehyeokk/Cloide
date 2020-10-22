@@ -1,15 +1,85 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
-<title>연령대</title>
+<br><br>
+<head>
+    <p id = 'title'>Select your Age!</p>
+    <br>
+</head>
 <br>
 <body>
 
-    <div>
-        <button id = "10대">10대</button>
-        <button id = "20대">20대</button>
-        <button id = "30대">30대</button>
-        <button id = "40대">40대</button>
+    <div class = "container">
+        <button id = '10대'class = 'ten' ><img id = "tenimg" src = "{% static 'img/10.PNG' %}"><br>10대</button>
+        <button id = '20대' class = "twen" ><img id = "twentyimg" src = "{% static 'img/20.PNG' %}"><br>20대</button>
+        <br>
+        <br>
+        <button id = '30대' class = 'thir'><img id = "thirtyimg" src = "{% static 'img/30.PNG' %}"><br>30대</button>
+        <button id = '40대' class = "four"><img id = "fourtyimg" src = "{% static 'img/40.PNG' %}"><br>40대</button>
+        <br><br>
     </div>
+    <style>
+        #title{
+                text-align: center;
+                font-size: large;
+                
+            }
+        .container{
+                text-align: center;  
+            }
+        .ten{
+                background-color: transparent;
+                border-radius: 8px;
+                border-color: transparent;
+            }
+        .twen{
+                margin-left:20px;
+                background-color: transparent;
+                border-radius:8px;
+                border-color: transparent;
+            }
+        .thir{
+                background-color: transparent;
+                border-radius: 8px;
+                border-color: transparent;
+            }
+        .four{
+                margin-left: 20px;
+                background-color: transparent;
+                border-radius:8px;
+                border-color: transparent;
+            }
+        #tenimg{
+            
+                width:300px;
+                height:200px;
+                border-radius: 3px;
+                border-color: transparent;
+            }
+            #twentyimg{
+                width:300px;
+                height:200px;
+                border-radius: 3px;
+                border-color: transparent;
+            }
+            #thirtyimg{
+                width:300px;
+                height:200px;
+                border-radius: 3px;
+                border-color: transparent;
+            }
+            #fourtyimg{
+                width:300px;
+                height:200px;
+                border-radius: 3px;
+                border-color: transparent;
+            }
+            #title{
+                text-align: center;
+                font-size:20px;
+            }
+
+    </style>
     <script>
         let temp = location.href.split("?");
         let sex = temp[1]; //성별

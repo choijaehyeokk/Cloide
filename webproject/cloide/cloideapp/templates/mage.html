@@ -1,55 +1,125 @@
 {% extends 'base.html' %}
-{% block content %}
-<title>연령대</title>
-<br>
-<body>
+    {% load static %}
+    {% block content %}
+    
+    <br>
+    <br>
+    
+    <head>
+        <p id = 'title'>Select your Age!</p>
+        <br>
+    </head>
+    <body>
 
-    <div>
-        <button id = "10대">10대</button>
-        <button id = "20대">20대</button>
-        <button id = "30대">30대</button>
-        <button id = "40대">40대</button>
-    </div>
-    <script>
-        let temp = location.href.split("?");
-        let sex = temp[1]; //성별
-        let style = temp[2];//스타일 선택
-        console.log(style);
-        let ten = document.getElementById('10대');
-        let twenty = document.getElementById('20대');
-        let thirty = document.getElementById('30대');
-        let fourty = document.getElementById('40대');
-        let age;
-        
-            
-            ten.addEventListener('click',function(event){
-                age = "10";
-                location.href = 'http://127.0.0.1:8000/brand?'+sex+"?"+style+"?"+age;
+        <div class ="container">
+            <button class = 'ten' id = '10대' ><img id = "tenimg" src = "{% static 'img/10.PNG' %}"><br>10대</button>
+            <button id = '20대' class='twen' ><img id = "twentyimg" src = "{% static 'img/20.PNG' %}"><br>20대</button>
+            <br>
+            <br>
+            <button id = '30대' class = 'thir' ><img id = "thirtyimg" src = "{% static 'img/30.PNG' %}"><br>30대</button>
+            <button id = '40대'class = 'four' ><img id = "fourtyimg" src = "{% static 'img/40.PNG' %}"><br>40대</button>
                 
-            });
-        
-        
-            ;
-            twenty.addEventListener('click',function(event){
-                age = "20"
-                location.href = 'http://127.0.0.1:8000/brand?'+sex+"?"+style+"?"+age;
-            });
-        
-        
-            
-            thirty.addEventListener('click',function(event){
-                age = "30";
-                location.href = 'http://127.0.0.1:8000/brand?'+sex+"?"+style+"?"+age;
-            });
-        
-        
-            
-            fourty.addEventListener('click',function(event){
-                age = "40";
-                location.href = 'http://127.0.0.1:8000/brand?'+sex+"?"+style+"?"+age;
+            <br><br>
+        </div>
+        <style>
+            #title{
+                text-align: center;
+                font-size: large;
                 
-            });
-        
-    </script>
-</body>
+            }
+            .container{
+                text-align: center;
+                background-color: transparent;
+                border-radius:8px;
+            }
+            .ten{
+                background-color: transparent;
+                border-radius: 8px;
+                border-color: transparent;
+            }
+            .twen{
+                margin-left:20px;
+                background-color: transparent;
+                border-radius:8px;
+                border-color: transparent;
+            }
+            .thir{
+                background-color: transparent;
+                border-radius: 8px;
+                border-color: transparent;
+            }
+            .four{
+                margin-left: 20px;
+                background-color: transparent;
+                border-radius:8px;
+                border-color: transparent;
+            }
+            
+            #tenimg{
+                display:inline;
+                width:300px;
+                height:200px;
+                border-radius: 3px; 
+
+            }
+
+            #twentyimg{
+                width:300px;
+                height:200px;
+                border-radius: 3px;
+            }
+            #thirtyimg{
+                width:300px;
+                height:200px;
+                border-radius: 3px;
+            }
+            #fourtyimg{
+                width:300px;
+                height:200px;
+                border-radius: 3px;
+            }
+            
+        </style>
+        <script>
+            let temp = location.href.split("?");
+            let sex = temp[1]; //성별
+            let style = temp[2];//스타일 선택
+            console.log(style);
+            let ten = document.getElementById('10대');
+            let twenty = document.getElementById('20대');
+            let thirty = document.getElementById('30대');
+            let fourty = document.getElementById('40대');
+            let age;
+            
+                
+                ten.addEventListener('click',function(event){
+                    age = "10";
+                    location.href = 'http://127.0.0.1:8000/brand?'+sex+"?"+style+"?"+age;
+                    
+                });
+            
+            
+                ;
+                twenty.addEventListener('click',function(event){
+                    age = "20"
+                    location.href = 'http://127.0.0.1:8000/brand?'+sex+"?"+style+"?"+age;
+                });
+            
+            
+                
+                thirty.addEventListener('click',function(event){
+                    age = "30";
+                    location.href = 'http://127.0.0.1:8000/brand?'+sex+"?"+style+"?"+age;
+                });
+            
+            
+                
+                fourty.addEventListener('click',function(event){
+                    age = "40";
+                    location.href = 'http://127.0.0.1:8000/brand?'+sex+"?"+style+"?"+age;
+                    
+                });
+            
+        </script>
+    </body>
 {% endblock %}

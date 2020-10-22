@@ -1,115 +1,171 @@
 {% extends 'base.html' %}
 {% block content %}
-<title>Style</title>
-<head> 
-    <p id ="title">
-        Select the style you want!
-    </p>
-</head>
-<br>
-<body>
-    <ol>
-        <div >
-            <button id = "All">All</button>
-            <button id = "Suit">정장</button>
-            <button id = "Sport">스포츠</button>
-            <br>
-            <br>
-            <button id = "Casual">캐주얼</button>
-            <button id = "Faminine">페미닌</button>
-            <button id = "Street">스트릿</button>
-        </div>
-    </ol>
-
-    <br>
+{% load static %}
+    <title>Style</title>
+    <head> 
+        <br>
+        <br>
+        <p id ="title">
+            Select the style you want!
+        </p>
+    </head>
     
-    <script>
-        //남자를 선택함을 전달
-        let temp = location.href.split("?");
-        //man 을 추출
-        let sex = temp[1];
-        let all = document.getElementById("All");
-        let suit = document.getElementById("Suit");
-        let sport = document.getElementById("Sport");
-        let casual = document.getElementById("Casual");
-        let faminine = document.getElementById("Faminine");
-        let street = document.getElementById("Street");
-        let style;
-
+    <body>
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+        </div>
         
-        all.addEventListener('click',function(event){
-            style = "All";
-            location.href = 'http://127.0.0.1:8000/wstyle/wage?'+sex+"?"+style;
-        });
-        
-        
-        suit.addEventListener('click',function(event){
-            style = "Suit";
-            location.href = 'http://127.0.0.1:8000/wstyle/wage?'+sex+"?"+style;
-        });
-        
-       
-        sport.addEventListener('click',function(event){
-            style = "Sport";
-            location.href = 'http://127.0.0.1:8000/wstyle/wage?'+sex+"?"+style;
-        });
-        
-        
-        casual.addEventListener('click',function(event){
-            style = "Casual";
-            location.href = 'http://127.0.0.1:8000/wstyle/wage?'+sex+"?"+style;
-        });
-        
-        
-        faminine.addEventListener('click',function(event){
-            style = "Faminine";
-            location.href = 'http://127.0.0.1:8000/wstyle/wage?'+sex+"?"+style;
-        });
-        
-        
-        street.addEventListener('click',function(event){
-            style = "Street";
-            location.href = 'http://127.0.0.1:8000/wstyle/wage?'+sex+"?"+style;
-        });
-        
+            <div class = "container">
+                <button id = "All"><img id = "all" src = "../static/img/all.PNG"><br>ALL</button>
+                <button id = "Suit"><img id = "suit" src = "../static/img/suit.jpeg"><br>정장</button>
+                <button id = "Sport"><img id = "sport" src = "../static/img/sportsm.PNG"><br>스포츠</button>
+                <br>
+                <br>
+                <button id ="Casual"><img id = "cas" src="../static/img/casual.jpeg" alt=""><br>캐주얼</button>
+                <button id = "Faminine"><img id = "fem" src = "../static/img/feminine.jpeg"><br>페미닌</button>
+                <button id = "Street"><img id = "stre" src = "../static/img/streetm.jpeg"><br>스트릿</button>
+                <br>
+                <br>
+                <br>
+            </div>
         
 
         
-    </script>
-    <style>
-        #All{
-            font-size:20px;
-            width: 100px;
-            height:50px;
-        }
-        #Suit{
-            font-size:20px;
-            width: 100px;
-            height:50px;
-        }
-        #Sport{
-            font-size:20px;
-            width: 100px;
-            height:50px;
-        }
-        #Casual{
-            font-size:20px;
-            width: 100px;
-            height:50px;
-        }
-        #Faminine{
-            font-size:20px;
-            width: 100px;
-            height:50px;
-        }#Street{
-            font-size:20px;
-            width: 100px;
-            height:50px;
-        }
-        #title{
-            text-align: center;
-            font-size:20px;
-        }
-    </style>
-</body>
+        
+        <script>
+            //남자를 선택함을 전달
+            let temp = location.href.split("?");
+            //man 을 추출
+            let sex = temp[1];
+            let all = document.getElementById("All");
+            let suit = document.getElementById("Suit");
+            let sport = document.getElementById("Sport");
+            let casual = document.getElementById("Casual");
+            let faminine = document.getElementById("Faminine");
+            let street = document.getElementById("Street");
+            let style;
+
+            
+            all.addEventListener('click',function(event){
+                style = "All";
+                location.href = 'http://127.0.0.1:8000/wstyle/wage?'+sex+"?"+style;
+            });
+            
+            
+            suit.addEventListener('click',function(event){
+                style = "Suit";
+                location.href = 'http://127.0.0.1:8000/wstyle/wage?'+sex+"?"+style;
+            });
+            
+        
+            sport.addEventListener('click',function(event){
+                style = "Sport";
+                location.href = 'http://127.0.0.1:8000/wstyle/wage?'+sex+"?"+style;
+            });
+            
+            
+            casual.addEventListener('click',function(event){
+                style = "Casual";
+                location.href = 'http://127.0.0.1:8000/wstyle/wage?'+sex+"?"+style;
+            });
+            
+            
+            faminine.addEventListener('click',function(event){
+                style = "Faminine";
+                location.href = 'http://127.0.0.1:8000/wstyle/wage?'+sex+"?"+style;
+            });
+            
+            
+            street.addEventListener('click',function(event){
+                style = "Street";
+                location.href = 'http://127.0.0.1:8000/wstyle/wage?'+sex+"?"+style;
+            });
+            
+            
+            
+        </script>
+        <style>
+            #fem{
+                width:300px;
+                height:250px;
+                border-radius: 8px;
+            }
+            #sport{
+                width:300px;
+                height:250px;
+                border-radius: 8px;
+            }
+            #suit{
+                width:300px;
+                height:250px;
+                padding-left: 0px;
+                border-radius: 8px;
+            }
+            #cas{
+                width:300px;
+                height:250px;
+                padding-left: 0px;
+                border-radius: 8px;
+            }
+            #stre{
+                width:300px;
+                height:250px;
+                padding-left: 0px;
+                border-radius: 8px;
+
+            }
+            #all{
+                width:300px;
+                height:250px;
+                border-radius: 8px;
+            }
+            #All{
+                
+                font-size:20px;
+                background-color: transparent;
+                padding-left:40px;
+                border: none;
+                border-radius: 8px;
+            } 
+            #Suit{
+                font-size:20px;
+                padding-left:40px;
+                background-color: transparent;
+                border: none;
+            }
+            #Sport{
+                font-size:20px;
+                padding-left:40px;
+                background-color: transparent;
+                border: none;
+            }
+            #Casual{
+                font-size:20px;
+                padding-left:40px;
+                background-color: transparent;
+                border: none;
+            }
+            #Faminine{
+                font-size:20px;
+                padding-left:40px;
+                background-color: transparent;
+                border: none;
+            }
+            #Street{
+                font-size:20px;
+                padding-left:40px;
+                background-color: transparent;
+                border: none;
+            }
+            #title{
+                text-align: center;
+                font-size:20px;
+                padding-right: 100px;
+            }
+        </style>
+    </body>
+    <br><br>
 {% endblock %}

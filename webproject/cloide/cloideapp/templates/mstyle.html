@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <title>Style</title>
+<br><br>
 <head>
     <p id = "title">Select the style you want!</p> 
 </head>
@@ -22,11 +23,12 @@
             <button id = "Casual"><img id = "cas" src = "../static/img/casual.jpeg"><br>캐주얼</button>
             <button id = "Vintage"><img id = "vin" src = "../static/img/vintagem.jpeg"><br>빈티지</button>
             <button id = "Street"><img id = "stre" src = "../static/img/streetm.jpeg"><br>스트릿</button>
+            <br><br><br>
         </div>
     
 </body>
     <br>
-    
+    <br><br>
     <script>
         //남자를 선택함을 전달
         let temp = location.href.split("?");
@@ -85,40 +87,45 @@
         #cas{
             width:300px;
             height:250px;
-
+            border-radius: 8px;
         }
         #sport{
             width:300px;
             height:250px;
-            padding-left:80px;
+            padding-left:0px;
+            border-radius: 8px;
         }
         #vin{
             width:300px;
             height:250px;
+            border-radius: 8px;
         }
         #suit{
             width:300px;
             height:250px;
-            padding-left: 40px;
+            padding-left: 0px;
+            border-radius: 8px;
         }
         #stre{
             width:300px;
             height:250px;
+            border-radius: 8px;
         }
         #all{
             width:300px;
             height:250px;
+            border-radius: 8px;
            
         }
         #All{
             
             font-size:20px;
             background-color: transparent;
-            padding-right:40px;
+            padding-left:40px;
             border: none;
         }
         #Suit{
-            padding-left:20px;
+            padding-left:40px;
             font-size:20px;
             background-color: transparent;
             border: none;
@@ -130,16 +137,20 @@
             border: none;
         }
         #Casual{
+            padding-left:40px;
             font-size:20px;
             background-color: transparent;
             border: none;
         }
         #Vintage{
             font-size:20px;
+            padding-left: 40px;
             background-color: transparent;
             border: none;
-        }#Street{
+        }
+        #Street{
             font-size:20px;
+            padding-left:40px;
             background-color: transparent;
             border: none;
         }
