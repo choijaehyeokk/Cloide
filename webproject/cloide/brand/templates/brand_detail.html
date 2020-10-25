@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+
   <center>
   {% for b in brand  %}
   <div class="brandcard" style="width: 20rem;">
@@ -9,17 +10,24 @@
       <br><br>
       <a id = "bname" href="">{{b.name}}</a>
       <br>
-      <a href="">{{b.url}}</a>
-      <h5 id = "introbrand">{{b.intro}}</h5>
+      <a href=""><strong>{{b.url}}</strong></a>
+      <br>
+      <br>
+      <h5 id = "introbrand">{{b.phone}}</h5>
     </div>
   </div>
-
+ 
+  <button type="button" class="btn btn-warning">옷장에 넣기</button>
+  
+   
+  
+  
   <br>
   <br>
   <br>
   <div class = "navbartool">
     <nav class="nav nav-pills flex-column flex-sm-row">
-      <a id = "bintro" class="flex-sm-fill text-sm-center nav-link active" href="#">브랜드 소개</a>
+      <a id = "bintro" class="flex-sm-fill text-sm-center nav-link" href="#">브랜드 소개</a>
       <a id = "bvideo" class="flex-sm-fill text-sm-center nav-link " href="#">홍보 영상</a>
       <a id = "bstyle" class="flex-sm-fill text-sm-center nav-link" href="#">스타일링</a>
       <a id = "bceleb" class="flex-sm-fill text-sm-center nav-link" href="#">클로이드 셀럽</a>
@@ -57,22 +65,29 @@
 
     let brandintro = document.getElementById('introbrand').textContent;
     let bname = document.getElementById('bname').textContent;
+    let classes = document.getElementsByClassName('flex-sm-fill text-sm-center nav-link');
+
     let intr = 'About '+ bname;
 
     let cel = 'Celebrity of '+bname;
-    
+    let activation = 'flex-sm-fill text-sm-center nav-link active';
     let sty = 'Styling '+ bname;
 
     let vdo = bname+'s '+'Video'; 
     bceleb.addEventListener('click', function(event){
-
+      bceleb.classList.toggle('active');
+      bintro.classList.remove('active');
+      bvideo.classList.remove('active');
+      bstyle.classList.remove('active');
       cardtitle.innerHTML=cel;
-      
       cardcon.innerHTML = brandintro;
     });
 
     bintro.addEventListener('click', function(event){
-      
+      bintro.classList.toggle('active');
+      bceleb.classList.remove('active');
+      bvideo.classList.remove('active');
+      bstyle.classList.remove('active');
       cardtitle.innerHTML=intr;
       cardcon.innerHTML = brandintro;
 
@@ -81,11 +96,19 @@
     bvideo.addEventListener('click', function(event){
       cardtitle.innerHTML=vdo;
       cardcon.innerHTML = 'API of ' + bname;
-    
+      cardcon.innerHTML = '{% load embed_video_tags %} {% for post in yvideo %} <div> <div> <p>{{ post.title }}</p> <p>{{ post.content }}</p> <div> {% video post.video as youtube %} <iframe class="embed-responsive-item" src="{{ youtube.url }}" frameborder="0" allowfullscreen></iframe> {% endvideo %} </div> </div> </div> {% endfor %}';
+      bvideo.classList.toggle('active');
+      bintro.classList.remove('active');
+      bceleb.classList.remove('active');
+      bstyle.classList.remove('active');
+
     });
 
     bstyle.addEventListener('click', function(event){
-
+      bstyle.classList.toggle('active');
+      bintro.classList.remove('active');
+      bvideo.classList.remove('active');
+      bceleb.classList.remove('active');
       cardtitle.innerHTML = sty;
       cardcon.innerHTML = "How to Style with "+ bname;
 
@@ -109,5 +132,5 @@
           text-align: center;
       
       }
-  </style> -->
+  </style> 
 {% endblock %}

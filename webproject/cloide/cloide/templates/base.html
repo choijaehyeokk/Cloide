@@ -12,9 +12,7 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/album/">
 
-    <!-- Bootstrap core CSS -->
-  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- CSS only -->
+    <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
     <!-- JS, Popper.js, and jQuery -->
@@ -37,6 +35,7 @@
             font-weight: normal;
             font-style: normal;
         }
+        
         body {
             font-family:GmarketSansLight;
         }
@@ -91,16 +90,17 @@
                 <ul class="list-unstyled">
                   <li><a href="{% url 'intro' %}" class="text-black">클로이드소개</a></li>
                   {% if user.is_authenticated %}
-                  <a style="background-color: coral; color: black;"><strong>{{user.username}}</strong>님 반갑습니다</a>
-                  <button><a href="{% url 'mypage' %}">마이페이지</a></button>
-                  <li><a href="javascript:{document.getElementById('logout').submit()}" class="text-black">로그아웃</a></li>
-                  <form id= 'logout' method = "POST" action ="{% url 'logout' %}">
-                    {% csrf_token %} <input type="hidden">
-                </form>
-                  {% else %}
-                    <li><a href="{% url 'signup' %}" class="text-black">회원가입</a></li>
-                    <li><a href="{% url 'login' %}" class="text-black">로그인</a></li>
-                  {% endif %}
+                    <a style="background-color: coral; color: black;"><strong>{{user.username}}</strong>님 반갑습니다</a>
+                    <button style="border: 0; text-decoration: none;"><a href="{% url 'mypage' %}" style="text-decoration: none;">마이페이지</a></button>
+                    <li><a href="javascript:{document.getElementById('logout').submit()}" class="text-black">로그아웃</a></li>
+                    <form id= 'logout' method = "POST" action ="{% url 'logout' %}">
+                      {% csrf_token %} 
+                      <input type="hidden">
+                    </form>
+                    {% else %}
+                      <li><a href="{% url 'signup' %}" class="text-black">회원가입</a></li>
+                      <li><a href="{% url 'login' %}" class="text-black">로그인</a></li>
+                    {% endif %}
                 </ul>
               </div>
             
@@ -110,8 +110,8 @@
         <div class="navbar navbar-dark bg-white shadow-sm">
           <div class="container d-flex justify-content-between">
             <a href="{% url 'home' %}" class="navbar-brand d-flex align-items-center text-black" style="color: black;">
-              <img src="../../home/static/img/logo.png" alt="" class='rounded'>
-              <strong>Cloide</strong>
+              <!-- <img src="../../home/static/img/logo.png" alt="" class='rounded'> -->
+                <strong>Cloide</strong>
             </a>
             <nav class="navbar navbar-light" style="background-color:white;">
               <form class="form-inline" action="{% url 'search'%}" method="GET">
@@ -134,10 +134,13 @@
   <footer class="text-muted">
     <div class="container">
       <p class="float-right">
-        <a href="#">위로올라가기</a>
+        <a href="#">Up to Page</a>
       </p>
-      <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-      <p>New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a href="../getting-started/introduction/">getting started guide</a>.</p>
+      <p class="float-right">Call : 02-0000-0000<br>Email : Cloide@gmail.com</p>
+      <p>Thank you for visiting <strong>Cloide</strong>.</p>
+      <p>We recommend the brands you want and provide a variety of information.</p>
+     
+      
     </div>
   </footer>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

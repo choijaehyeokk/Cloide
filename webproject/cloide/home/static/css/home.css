@@ -4,7 +4,8 @@
     height: 650px;
     overflow: hidden;
     padding-bottom: 40px;
-    margin-left: 150px;
+    margin-left: 100px;
+    margin-right: 120px;
 }
 .container img{
     border-radius: 10px;

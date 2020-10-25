@@ -1,5 +1,6 @@
-from django.shortcuts import render, get_object_or_404
-from .models import Brand, Agesex, Stylekind
+from django.shortcuts import render, get_object_or_404,redirect
+from .models import Brand, Agesex, Stylekind,User_brand_add,Yvideo
+from django.contrib.auth.models import User
 from urllib import parse
 
 # Create your views here.
@@ -8,24 +9,24 @@ from urllib import parse
 def brand_detail(request):
     #brand = Brand.objects.bnum
     #brand.bnum = request.POST['bnum']
+    yobject =  Yvideo.objects.all()
     current_url = request.get_full_path()
     temp = current_url.split('?')
+    print(temp)
     brand = temp[1]
     dec = parse.unquote(brand)
 
-    print("hi",dec)
     allbrand = Brand.objects.all()
     result = list()
     for choice in allbrand:
         if dec == choice.name:
             #상세페이지 브랜드랑 db내 브랜드와 같다면
-            print("hi")
             result.append(choice)
     
     print(result)#result에 해당 브랜드의 정보 담아서 상세페이지로 전달.
    
     #brand = request.POST.get('brand_name')
-    return render(request, 'brand_detail.html',{'brand':result})
+    return render(request, 'brand_detail.html',{'brand':result,'yvideo':yobject})
 
 def brand(request):
     brand = Brand.objects.all()
@@ -64,3 +65,20 @@ def brand(request):
     #2. 토큰을 html에 넘겨줘서 html안에서 모델에 접근해서 보여준다.
     return render(request,'brand.html',{'current_url' : current_url, 'brands' : result})
 
+def user_brand_add(request):
+    u_object = User_brand_add.objects.all()
+    
+    allbrand = Brand.objects.all()
+    if(request.user.is_authenticated):
+      current_user_name = request.user.username
+    
+    for choice in allbrand:
+       if b.name == choice.name:
+           current_brand_bnum = b.bnum
+           result.append(choice)
+
+    u_object.user_name = current_user_name
+    u_object.current_brand = current_brand_bnum
+    u_object.save()
+
+    return redirect('/')
