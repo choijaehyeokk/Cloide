@@ -14,6 +14,7 @@ class Brand(models.Model):
     def __str__(self):
         return self.name
 
+
 class Agesex(models.Model):
     brand = models.ForeignKey(Brand, on_delete = models.CASCADE)
     age = models.IntegerField()

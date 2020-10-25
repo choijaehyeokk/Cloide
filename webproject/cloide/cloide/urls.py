@@ -21,6 +21,7 @@ from django.conf.urls.static import static
 import notice.views
 import accounts.views
 import brand.views
+import cloide.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     #path('cloideapp/mstyle',cloideapp.views.mstyle, name='mstyle'),
@@ -31,5 +32,6 @@ urlpatterns = [
     path('brand/',include('brand.urls')),
     path('home/',include('home.urls'),name = 'home'),
     path('',cloideapp.views.firstpage, name= 'firstpage'),
+    path('menubrand/',cloide.views.menubrand, name='menubrand'),
     #path('cloideapp/mstyle',cloideapp.views.mstyle, name='mstyle'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
