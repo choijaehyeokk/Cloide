@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'brand.apps.BrandConfig',
     'imagekit',
+    'embed_video',
 ]
 
 MIDDLEWARE = [

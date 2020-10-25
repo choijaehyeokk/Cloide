@@ -90,16 +90,17 @@
                 <ul class="list-unstyled">
                   <li><a href="{% url 'intro' %}" class="text-black">클로이드소개</a></li>
                   {% if user.is_authenticated %}
-                  <a style="background-color: coral; color: black;"><strong>{{user.username}}</strong>님 반갑습니다</a>
-                  <button style="border: 0; text-decoration: none;"><a href="{% url 'mypage' %}" style="text-decoration: none;">마이페이지</a></button>
-                  <li><a href="javascript:{document.getElementById('logout').submit()}" class="text-black">로그아웃</a></li>
-                  <form id= 'logout' method = "POST" action ="{% url 'logout' %}">
-                    {% csrf_token %} <input type="hidden">
-                </form>
-                  {% else %}
-                    <li><a href="{% url 'signup' %}" class="text-black">회원가입</a></li>
-                    <li><a href="{% url 'login' %}" class="text-black">로그인</a></li>
-                  {% endif %}
+                    <a style="background-color: coral; color: black;"><strong>{{user.username}}</strong>님 반갑습니다</a>
+                    <button style="border: 0; text-decoration: none;"><a href="{% url 'mypage' %}" style="text-decoration: none;">마이페이지</a></button>
+                    <li><a href="javascript:{document.getElementById('logout').submit()}" class="text-black">로그아웃</a></li>
+                    <form id= 'logout' method = "POST" action ="{% url 'logout' %}">
+                      {% csrf_token %} 
+                      <input type="hidden">
+                    </form>
+                    {% else %}
+                      <li><a href="{% url 'signup' %}" class="text-black">회원가입</a></li>
+                      <li><a href="{% url 'login' %}" class="text-black">로그인</a></li>
+                    {% endif %}
                 </ul>
               </div>
             
@@ -109,8 +110,8 @@
         <div class="navbar navbar-dark bg-white shadow-sm">
           <div class="container d-flex justify-content-between">
             <a href="{% url 'home' %}" class="navbar-brand d-flex align-items-center text-black" style="color: black;">
-              <img src="../../home/static/img/logo.png" alt="" class='rounded'>
-              <strong>Cloide</strong>
+              <!-- <img src="../../home/static/img/logo.png" alt="" class='rounded'> -->
+                <strong>Cloide</strong>
             </a>
             <nav class="navbar navbar-light" style="background-color:white;">
               <form class="form-inline" action="{% url 'search'%}" method="GET">
